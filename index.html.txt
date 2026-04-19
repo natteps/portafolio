@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Portafolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="fondo"></div>
+
+<div id="llavero">
+    <img src="https://raw.githubusercontent.com/natteps/portafolio/main/aro.png" class="aro">
+
+    <img src="https://raw.githubusercontent.com/natteps/portafolio/main/key.png" class="item" id="proyectos">
+    <img src="llave2.png" class="item" id="disenos">
+    <img src="https://raw.githubusercontent.com/natteps/portafolio/main/tiburon.png" class="item" id="sketches">
+    <img src="https://raw.githubusercontent.com/natteps/portafolio/main/photocard.png" class="item" id="sobreMi">
+</div>
+
+<!-- Ventanas -->
+<div class="ventana" id="ventana-proyectos">
+    <h2>Proyectos</h2>
+    <p>Aquí van tus diseños con explicación</p>
+</div>
+
+<div class="ventana" id="ventana-disenos">
+    <h2>Diseños</h2>
+    <p>Proceso, manufactura, ideas</p>
+</div>
+
+<div class="ventana" id="ventana-sketches">
+    <h2>Sketches</h2>
+    <p>Bocetos y exploración</p>
+</div>
+
+<div class="ventana" id="ventana-sobreMi">
+    <h2>about me</h2>
+    <p>hi</p>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>

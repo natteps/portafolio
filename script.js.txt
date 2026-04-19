@@ -1,0 +1,59 @@
+let llavero = document.getElementById("llavero");
+
+let moviendo = false;
+let offsetX, offsetY;
+let velX = 0;
+let velY = 0;
+
+/* Arrastrar */
+llavero.addEventListener("mousedown", (e) => {
+    moviendo = true;
+    offsetX = e.clientX - llavero.offsetLeft;
+    offsetY = e.clientY - llavero.offsetTop;
+});
+
+document.addEventListener("mouseup", () => {
+    moviendo = false;
+});
+
+document.addEventListener("mousemove", (e) => {
+    if (moviendo) {
+        let newX = e.clientX - offsetX;
+        let newY = e.clientY - offsetY;
+
+        velX = newX - llavero.offsetLeft;
+        velY = newY - llavero.offsetTop;
+
+        llavero.style.left = newX + "px";
+        llavero.style.top = newY + "px";
+    }
+});
+
+/* Inercia (movimiento orgánico) */
+function animar() {
+    if (!moviendo) {
+        velX *= 0.95;
+        velY *= 0.95;
+
+        llavero.style.left = llavero.offsetLeft + velX + "px";
+        llavero.style.top = llavero.offsetTop + velY + "px";
+    }
+
+    /* Balanceo leve */
+    let rot = velX * 0.5;
+    llavero.style.transform = `rotate(${rot}deg)`;
+
+    requestAnimationFrame(animar);
+}
+animar();
+
+/* Abrir ventanas */
+function abrir(id) {
+    document.querySelectorAll(".ventana").forEach(v => v.style.display = "none");
+    document.getElementById(id).style.display = "block";
+}
+
+document.getElementById("proyectos").onclick = () => abrir("ventana-proyectos");
+document.getElementById("disenos").onclick = () => abrir("ventana-disenos");
+document.getElementById("sketches").onclick = () => abrir("ventana-sketches");
+document.getElementById("sobreMi").onclick = () => abrir("ventana-sobreMi");

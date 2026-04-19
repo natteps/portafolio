@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: sans-serif;
+}
+
+/* Fondo pastel */
+#fondo {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle,#FFE38C);
+    z-index: -1;}
+
+/* Llavero */
+#llavero {
+    position: absolute;
+    top: 200px;
+    left: 200px;
+    cursor: grab;}
+
+/* Imágenes */
+.item, .aro {
+    position: absolute;
+    width: 220px;
+    transition: transform 0.2s;
+}
+
+/* Posiciones.diseño*/ 
+#disenos { top: 150px; left: 90px; }
+#proyectos {
+  position: absolute;
+  top: 137px; 
+  left: -98px;
+  transform: rotate(40deg);
+  transform-origin: center;}
+#proyectos:hover {
+  transform: rotate(45deg) scale(1.1);
+}
+#sketches { top: 158px; left: 18px; }
+#sobreMi { top: 146px; left: 112px; }
+
+/* Hover bonito */
+.item:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Ventanas */
+.ventana {
+    position: absolute;
+    top: 150px;
+    left: 100px;
+    width: 300px;
+    padding: 20px;
+    border-radius: 20px;
+    background: #fff0f5;
+    display: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
